@@ -3,209 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mailsea AI - Email Assistant</title>
+    <title>MailSea AI - Email Assistant</title>
     <link rel="icon" href="/src/mailicon.svg" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Light Mode */
-        body {
-            background-color: #f7f7f7;
-        }
-        header {
-            background-color: #ffffff;
-            color: #333333;
-        }
-        .bg-blue-600 {
-            background-color: #2563eb;
-        }
-        .bg-white {
-            background-color: #ffffff;
-        }
-        .text-gray-700 {
-            color: #333333;
-        }
-        .text-gray-400 {
-            color: #6b7280;
-        }
-        .bg-gray-100 {
-            background-color: #f3f4f6;
-        }
-        .bg-gray-800 {
-            background-color: #ffffff;
-        }
-        .bg-blue-600.text-white {
-            color: #ffffff;
-        }
-
-        /* Dark Mode */
-        .dark body {
-            background-color: #131d28;
-        }
-        .dark header {
-            background-color: #233648;
-            color: #e0e0e0;
-        }
-        .dark .bg-blue-600 {
-            background-color: #1e3a8a;
-        }
-        .dark .bg-white {
-            background-color: #233648;
-        }
-        .dark .text-gray-700 {
-            color: #ffffff;
-        }
-        .dark .text-gray-400 {
-            color: #ffffff;
-        }
-        .dark .bg-gray-100 {
-            background-color: #233648;
-        }
-        .dark .bg-gray-800 {
-            background-color: #30374f;
-        }
-        .dark .bg-blue-600.text-white {
-            color: #ffffff;
-        }
-
-        /* Toggle Switch Styles */
-        .toggle-wrapper {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .toggle-label {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .toggle-slider {
-            position: relative;
-            width: 50px;
-            height: 24px;
-            background: #d1d5db;
-            border-radius: 12px;
-            transition: background 0.3s ease;
-        }
-        .toggle-slider::before {
-            content: "";
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
-            background: #ffffff;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-        .dark .toggle-slider {
-            background: #4b5563;
-        }
-        .dark .toggle-slider::before {
-            transform: translateX(26px);
-        }
-        input[type="checkbox"]:checked + .toggle-label .toggle-slider {
-            background: #2563eb;
-        }
-        input[type="checkbox"]:checked + .toggle-label .toggle-slider::before {
-            transform: translateX(26px);
-        }
-    </style>
+    <link href="/styles/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow">
-        <div class="container mx-auto flex justify-between items-center p-6">
-            <a href="/home.html" class="text-2xl font-bold text-blue-600">MailSea AI</a>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4 md:p-6">
+            <a href="/home.html" class="text-2xl font-bold text-blue-600 transition duration-300 hover:text-blue-500">MailSea AI</a>
             <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#features" class="text-gray-700 hover:text-blue-600">Features</a></li>
-                    <li><a href="#cta" class="text-gray-700 hover:text-blue-600">Sign Up</a></li>
+                <ul class="flex space-x-6">
+                    <li><a href="#features" class="text-gray-700 hover:text-blue-600 transition duration-300">Features</a></li>
+                    <li><a href="#cta" class="text-gray-700 hover:text-blue-600 transition duration-300">Sign Up</a></li>
                 </ul>
             </nav>
-            <!-- Light/Dark Mode Toggle -->
-            <div class="ml-4 flex items-center toggle-wrapper">
-                <input type="checkbox" id="mode-switch" class="hidden">
-                <label for="mode-switch" class="toggle-label flex items-center">
-                    <span class="text-gray-700 dark:text-gray-400 mr-2">Light</span>
-                    <div class="toggle-slider"></div>
-                    <span class="text-gray-700 dark:text-gray-400 ml-2">Dark</span>
-                </label>
-            </div>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="bg-blue-600 text-white py-20">
-        <div class="container mx-auto text-center">
-            <button class="bg-white text-blue-600 px-6 py-3 font-semibold rounded shadow">MailSea is rolling out in beta mode! Claim an invite now!</button><br><br>
-            <h1 class="text-4xl font-bold mb-4">Transform Your Email Experience with AI</h1>
-            <p class="text-lg mb-8">Automate, optimize, and enhance your email campaigns effortlessly.</p>
-            <a href="#cta" class="bg-white text-blue-600 px-6 py-3 font-semibold rounded shadow">Get Started</a>
+<!-- Light/Dark Mode Toggle -->
+<div class="ml-4 flex items-center p-4">
+    <input type="checkbox" id="mode-switch" class="hidden">
+    <label for="mode-switch" class="flex items-center cursor-pointer">
+        <span class="text-gray-700 dark:text-gray-400 mr-2 text-sm font-medium">Light</span>
+        <div class="relative">
+            <div class="toggle-slider w-12 h-6 rounded-full bg-gray-300 dark:bg-gray-700 transition duration-300 ease-in-out"></div>
+            <div class="toggle-circle w-6 h-6 bg-white rounded-full absolute top-0 left-0 transform transition duration-300 ease-in-out"></div>
         </div>
-    </section>
-
+        <span class="text-gray-700 dark:text-gray-400 ml-2 text-sm font-medium">Dark</span>
+    </label>
+</div>
+<!-- Hero Section -->
+<section class="bg-blue-600 text-white py-20">
+    <div class="container mx-auto text-center">
+        <button class="bg-white text-blue-600 px-6 py-3 font-semibold rounded shadow-lg transition duration-300 ease-in-out hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 mb-8">
+            MailSea is rolling out in beta mode! Claim an invite now!
+        </button>
+        
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Transform Your Email Experience with AI</h1>
+        
+        <p class="text-lg md:text-xl mb-8 leading-relaxed">Automate, optimize, and enhance your email campaigns effortlessly.</p>
+        
+        <a href="#cta" class="bg-white text-blue-600 px-6 py-3 font-semibold rounded shadow-lg transition duration-300 ease-in-out hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+            Get Started
+        </a>
+    </div>
+</section>
     <!-- Features Section -->
-    <section id="features" class="py-16">
+    <section id="features" class="py-16 bg-gray-100">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">Features</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-white rounded shadow">
-                    <h3 class="text-xl font-semibold mb-4">AI-Driven Campaigns</h3>
-                    <p>Leverage AI to create personalized email campaigns with high conversion rates.</p>
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl hover:bg-blue-50">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">AI-Driven Campaigns</h3>
+                    <p class="text-gray-700">Leverage AI to create personalized email campaigns with high conversion rates.</p>
                 </div>
-                <div class="text-center p-6 bg-white rounded shadow">
-                    <h3 class="text-xl font-semibold mb-4">Automated Scheduling</h3>
-                    <p>Set up your campaigns and let AI handle the best time to send them out.</p>
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl hover:bg-blue-50">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Automated Scheduling</h3>
+                    <p class="text-gray-700">Set up your campaigns and let AI handle the best time to send them out.</p>
                 </div>
-                <div class="text-center p-6 bg-white rounded shadow">
-                    <h3 class="text-xl font-semibold mb-4">Detailed Analytics</h3>
-                    <p>Gain insights into your campaigns with in-depth AI-powered analytics.</p>
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl hover:bg-blue-50">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Detailed Analytics</h3>
+                    <p class="text-gray-700">Gain insights into your campaigns with in-depth AI-powered analytics.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="cta" class="bg-blue-600 text-white py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4">Get Started Today</h2>
-            <p class="mb-8">Join our exclusive Beta launch for a smarter AI-powered email strategy.</p>
-            <form action="#" class="max-w-lg mx-auto">
-                <input type="email" placeholder="Enter your email" class="w-full p-4 mb-4 rounded text-gray-700" required>
-                <button type="submit" class="bg-white text-blue-600 px-6 py-3 font-semibold rounded shadow">Coming soon</button>
-            </form>
+    </section>    
+<!-- CTA Section -->
+<section id="cta" class="bg-blue-600 text-white py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Started Today</h2>
+        <p class="mb-8 text-lg md:text-xl">Join our exclusive Beta launch for a smarter AI-powered email strategy.</p>
+        <form action="#" class="max-w-lg mx-auto">
+            <input type="email" placeholder="Enter your email" class="w-full p-4 mb-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
+            <button type="submit" class="bg-white text-blue-600 px-6 py-3 font-semibold rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-blue-100 hover:shadow-lg">
+                Coming Soon
+            </button>
+        </form>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto text-center">
+        <p class="mb-4">&copy; 2024 MailSea AI. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">Terms of Service</a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300 ease-in-out">Contact Us</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 MailSea AI. All rights reserved.</p>
-            <div class="mt-4">
-                <a href="#" class="text-gray-400 hover:text-black mx-2">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-black mx-2">Terms of Service</a>
-                <a href="#" class="text-gray-400 hover:text-black mx-2">Contact Us</a>
-            </div>
-        </div>
-    </footer>
-     <!-- JavaScript for Dark Mode Toggle -->
-     <script>
+    </div>
+</footer>
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modeSwitch = document.getElementById('mode-switch');
-            
+            const toggleCircle = document.querySelector('.toggle-circle');
+
             // Load the saved mode from localStorage
             if (localStorage.getItem('dark-mode') === 'true') {
                 document.documentElement.classList.add('dark');
                 modeSwitch.checked = true;
+                toggleCircle.style.transform = 'translateX(1.25rem)';
             }
-            
+
             modeSwitch.addEventListener('change', () => {
                 if (modeSwitch.checked) {
                     document.documentElement.classList.add('dark');
                     localStorage.setItem('dark-mode', 'true');
+                    toggleCircle.style.transform = 'translateX(1.25rem)';
                 } else {
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('dark-mode', 'false');
+                    toggleCircle.style.transform = 'translateX(0)';
                 }
             });
         });

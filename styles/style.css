@@ -1,0 +1,276 @@
+/* Light Mode Variables */
+:root {
+    --bg-light: #f7f7f7;
+    --bg-card-light: #ffffff;
+    --text-light: #333333;
+    --text-secondary-light: #374151;
+    --accent-light: #2563eb;
+    --accent-hover-light: #1d4ed8;
+    --bg-button-light: #ffffff;
+    --bg-feature-light: #f3f4f6;
+    --hover-bg-feature-light: #ebf8ff;
+    --cta-bg-light: #2563eb;
+    --cta-text-light: #ffffff;
+    --cta-input-bg-light: #ffffff;
+    --cta-input-placeholder-light: #a0aec0;
+}
+
+/* Dark Mode Variables */
+.dark {
+    --bg-dark: #1E293B;
+    --bg-card-dark: #374151;
+    --text-dark: #D1D5DB;
+    --text-secondary-dark: #A0AEC0;
+    --accent-dark: #4A90E2;
+    --accent-hover-dark: #6B46C1;
+    --bg-button-dark: #233648;
+    --bg-feature-dark: #2a2a2a;
+    --hover-bg-feature-dark: #4a90e2;
+    --cta-bg-dark: #1e3a8a;
+    --cta-text-dark: #e2e8f0;
+    --cta-input-bg-dark: #2a2a2a;
+    --cta-input-placeholder-dark: #a0aec0;
+}
+
+/* General Styles */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+.dark body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Header */
+header {
+    background-color: var(--bg-card-light);
+    color: var(--text-light);
+}
+
+header a {
+    color: var(--accent-light);
+    transition: color 0.3s ease-in-out;
+}
+
+header a:hover {
+    color: var(--accent-hover-light);
+}
+
+header nav ul li a {
+    color: var(--text-secondary-light);
+}
+
+.dark header {
+    background-color: var(--bg-card-dark);
+    color: var(--text-dark);
+}
+
+.dark header a {
+    color: var(--accent-dark);
+}
+
+.dark header a:hover {
+    color: var(--accent-hover-dark);
+}
+
+.dark header nav ul li a {
+    color: var(--text-dark);
+}
+
+/* Section Styles */
+section {
+    background-color: var(--cta-bg-light);
+    color: var(--cta-text-light);
+}
+
+section button,
+section a {
+    background-color: var(--bg-button-light);
+    color: var(--accent-light);
+}
+
+section button:hover,
+section a:hover {
+    background-color: var(--hover-bg-feature-light);
+}
+
+section h1,
+section p {
+    color: var(--cta-text-light);
+}
+
+.dark section {
+    background-color: var(--cta-bg-dark);
+    color: var(--cta-text-dark);
+}
+
+.dark section button,
+.dark section a {
+    background-color: var(--bg-button-dark);
+    color: var(--accent-dark);
+}
+
+.dark section button:hover,
+.dark section a:hover {
+    background-color: var(--accent-hover-dark);
+}
+
+.dark section h1,
+.dark section p {
+    color: var(--text-dark);
+}
+
+/* Features Section */
+#features {
+    background-color: var(--bg-feature-light);
+}
+
+#features h2 {
+    color: var(--text-secondary-light);
+}
+
+#features .text-gray-700 {
+    color: var(--text-secondary-light);
+}
+
+#features .bg-white {
+    background-color: var(--bg-card-light);
+}
+
+#features .hover\:bg-blue-50:hover {
+    background-color: var(--hover-bg-feature-light);
+}
+
+.dark #features {
+    background-color: var(--bg-feature-dark);
+}
+
+.dark #features h2 {
+    color: var(--text-dark);
+}
+
+.dark #features .text-gray-700 {
+    color: var(--text-secondary-dark);
+}
+
+.dark #features .bg-white {
+    background-color: var(--bg-card-dark);
+}
+
+.dark #features .hover\:bg-blue-50:hover {
+    background-color: var(--hover-bg-feature-dark);
+}
+
+/* Call to Action (CTA) */
+#cta {
+    background-color: var(--cta-bg-light);
+}
+
+#cta h2 {
+    color: var(--cta-text-light);
+}
+
+#cta p {
+    color: var(--cta-input-placeholder-light);
+}
+
+#cta input {
+    background-color: var(--cta-input-bg-light);
+    color: var(--text-secondary-light);
+}
+
+#cta input::placeholder {
+    color: var(--cta-input-placeholder-light);
+}
+
+#cta button {
+    background-color: var(--bg-button-light);
+    color: var(--accent-light);
+}
+
+.dark #cta {
+    background-color: var(--cta-bg-dark);
+}
+
+.dark #cta h2 {
+    color: var(--cta-text-dark);
+}
+
+.dark #cta p {
+    color: var(--text-secondary-dark);
+}
+
+.dark #cta input {
+    background-color: var(--cta-input-bg-dark);
+    color: var(--text-dark);
+}
+
+.dark #cta input::placeholder {
+    color: var(--cta-input-placeholder-dark);
+}
+
+.dark #cta button {
+    background-color: var(--accent-dark);
+    color: var(--cta-text-dark);
+}
+
+/* Footer */
+/* Light Mode Styles for Footer */
+footer {
+    background-color: #1f2937; /* Dark gray background for light mode */
+    color: #9ca3af; /* Light gray text */
+}
+
+footer a {
+    color: #9ca3af; /* Gray for links in light mode */
+    transition: color 0.3s ease-in-out; /* Smooth transition for link hover */
+}
+
+footer a:hover {
+    color: #ffffff; /* White color on hover */
+}
+
+/* Dark Mode Styles for Footer */
+.dark footer {
+    background-color: #111827; /* Darker background for dark mode */
+    color: #6b7280; /* Lighter gray text for better contrast */
+}
+
+.dark footer a {
+    color: #6b7280; /* Gray links for dark mode */
+}
+
+.dark footer a:hover {
+    color: #ffffff; /* White text on hover for better visibility */
+}
+
+/* Toggle Styles */
+.toggle-slider {
+    position: relative;
+    width: 2.5rem;
+    height: 1.25rem;
+    background: var(--bg-feature-light);
+    border-radius: 9999px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-circle {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--cta-text-light);
+    top: 0.125rem;
+    left: 0.125rem;
+    border-radius: 9999px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dark .toggle-slider {
+    background: var(--bg-feature-dark);
+}
+
+.dark .toggle-circle {
+    background: var(--cta-text-dark);
+}
